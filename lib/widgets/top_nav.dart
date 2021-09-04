@@ -20,13 +20,14 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           : IconButton(
               icon: Icon(Icons.menu),
               onPressed: () {
-                key.currentState!.openDrawer();
+                key.currentState?.openDrawer();
               },
             ),
       elevation: 0,
       title: Row(
         children: [
           Visibility(
+            visible: !ResponsiveWidget.isSmallScreen(context),
             child: CustomText(
               text: "Dash",
               color: lightGrey,
