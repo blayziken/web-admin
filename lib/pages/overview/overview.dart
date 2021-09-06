@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_crash_course/constants/controllers.dart';
 import 'package:flutter_web_crash_course/helpers/responsiveness.dart';
+import 'package:flutter_web_crash_course/pages/overview/widgets/overview_cards_large.dart';
+import 'package:flutter_web_crash_course/pages/overview/widgets/overview_cards_medium.dart';
+import 'package:flutter_web_crash_course/pages/overview/widgets/overview_cards_small.dart';
 import 'package:flutter_web_crash_course/widgets/custom_text.dart';
 import 'package:get/get.dart';
 
@@ -25,6 +28,20 @@ class OverViewPage extends StatelessWidget {
             ],
           ),
         ),
+        Expanded(
+          child: ListView(
+            children: [
+              if (ResponsiveWidget.isLargeScreen(context) ||
+                  ResponsiveWidget.isMediumScreen(context))
+                if (ResponsiveWidget.isCustomSize(context))
+                  OverViewCardMediumScreen()
+                else
+                  OverViewCardsLargeScreen()
+              else
+                OverViewCardsSmallScreen()
+            ],
+          ),
+        )
       ],
     );
   }
