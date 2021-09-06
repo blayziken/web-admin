@@ -15,6 +15,7 @@ class RevenueInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: RichText(
+        textAlign: TextAlign.center,
         text: TextSpan(
           children: [
             TextSpan(
@@ -27,7 +28,7 @@ class RevenueInfo extends StatelessWidget {
             TextSpan(
               text: "\N $amount",
               style: TextStyle(
-                color: lightGrey,
+                color: dark,
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
               ),

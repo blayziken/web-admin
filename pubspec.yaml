@@ -1,7 +1,7 @@
 name: flutter_web_crash_course
 description: Flutter Web Crash Course.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -12,10 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.1.0
-  charts_flutter: ^0.10.0
+  charts_flutter: ^0.11.0
   get: ^4.1.4
   data_table_2: ^2.0.3
-
 
   cupertino_icons: ^1.0.2
 
@@ -24,7 +23,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
 
   assets:

@@ -45,7 +45,7 @@ class RevenueSectionLarge extends StatelessWidget {
             ),
           ),
           Container(
-            width: 1,
+            width: 3,
             height: 120,
             color: lightGrey,
           ),

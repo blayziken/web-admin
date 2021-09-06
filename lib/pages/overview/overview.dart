@@ -7,6 +7,10 @@ import 'package:flutter_web_crash_course/pages/overview/widgets/overview_cards_s
 import 'package:flutter_web_crash_course/widgets/custom_text.dart';
 import 'package:get/get.dart';
 
+import 'widgets/drivers_section/available_drivers.dart';
+import 'widgets/revenue_section/large.dart';
+import 'widgets/revenue_section/small.dart';
+
 class OverViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,12 @@ class OverViewPage extends StatelessWidget {
                 else
                   OverViewCardsLargeScreen()
               else
-                OverViewCardsSmallScreen()
+                OverViewCardsSmallScreen(),
+              if (!ResponsiveWidget.isSmallScreen(context))
+                RevenueSectionLarge()
+              else
+                RevenueSectionSmall(),
+              AvailableDrivers(),
             ],
           ),
         )
