@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_crash_course/constants/style.dart';
 import 'package:flutter_web_crash_course/controllers/navigation_controller.dart';
+import 'package:flutter_web_crash_course/pages/404/error_page.dart';
 import 'package:flutter_web_crash_course/pages/authentication/authentication.dart';
+import 'package:flutter_web_crash_course/routing/routes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,6 +20,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: AuthenticationPageRoute,
+      unknownRoute: GetPage(
+        name: "/not-found",
+        page: () => PageNotFound(),
+        transition: Transition.fadeIn,
+      ),
+      getPages: [
+        GetPage(name: rootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: AuthenticationPageRoute, page: () => AuthenticationPage()),
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Dashboard',
       theme: ThemeData(
@@ -31,7 +44,6 @@ class MyApp extends StatelessWidget {
         }),
         primaryColor: Colors.blue,
       ),
-      home: AuthenticationPage(),
     );
   }
 }

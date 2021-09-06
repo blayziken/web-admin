@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_crash_course/constants/controllers.dart';
 import 'package:flutter_web_crash_course/constants/style.dart';
 import 'package:flutter_web_crash_course/helpers/responsiveness.dart';
-import 'package:flutter_web_crash_course/pages/authentication/authentication.dart';
 import 'package:flutter_web_crash_course/routing/routes.dart';
 import 'package:flutter_web_crash_course/widgets/side_menu_item.dart';
 import 'package:get/get.dart';
@@ -50,21 +49,22 @@ class SideMenu extends StatelessWidget {
           Divider(color: lightGrey.withOpacity(.1)),
           Column(
             mainAxisSize: MainAxisSize.min,
-            children: sideMenuItems
-                .map((itemName) => SideMenuItem(
-                      itemName: itemName == AuthenticationPageRoute
-                          ? "Log Out"
-                          : itemName,
+            children: sideMenuItemRoutes
+                .map((item) => SideMenuItem(
+                      itemName: item.name,
                       onTap: () {
-                        if (itemName == AuthenticationPageRoute) {
-                          Get.offAll(() => AuthenticationPage());
+                        if (item.route == AuthenticationPageRoute) {
+                          menuController
+                              .changeActiveItemTo(OverViewPageDisplayName);
+
+                          Get.offAllNamed(AuthenticationPageRoute);
                         }
 
-                        if (!menuController.isActive(itemName)) {
-                          menuController.changeActiveItemTo(itemName);
+                        if (!menuController.isActive(item.name)) {
+                          menuController.changeActiveItemTo(item.name);
                           if (ResponsiveWidget.isSmallScreen(context))
                             Get.back();
-                          navigationController.navigateTo(itemName);
+                          navigationController.navigateTo(item.route);
                         }
                       },
                     ))
@@ -75,3 +75,30 @@ class SideMenu extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+// Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: sideMenuItems
+//                 .map((item) => SideMenuItem(
+//                       itemName: itemName == AuthenticationPageRoute
+//                           ? "Log Out"
+//                           : itemName,
+//                       onTap: () {
+//                         if (itemName == AuthenticationPageRoute) {
+//                           Get.offAll(() => AuthenticationPage());
+//                         }
+
+//                         if (!menuController.isActive(itemName)) {
+//                           menuController.changeActiveItemTo(itemName);
+//                           if (ResponsiveWidget.isSmallScreen(context))
+//                             Get.back();
+//                           navigationController.navigateTo(itemName);
+//                         }
+//                       },
+//                     ))
+//                 .toList(),
+//           ),

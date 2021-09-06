@@ -43,14 +43,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               Icons.settings,
               color: dark.withOpacity(.7),
             ),
-            onPressed: () {
-              // print('a');
-              // Navigator(
-              //   key: key4,
-
-              //   onGenerateRoute: Get.toNamed('/jjk'),
-              // );
-            },
+            onPressed: () {},
           ),
           Stack(
             children: [

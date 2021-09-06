@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_crash_course/constants/style.dart';
+import 'package:flutter_web_crash_course/routing/routes.dart';
 import 'package:flutter_web_crash_course/widgets/custom_text.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../layout.dart';
 
 class AuthenticationPage extends StatelessWidget {
   @override
@@ -99,7 +102,8 @@ class AuthenticationPage extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  // Get.offAllNamed(rootRoute);
+                  Get.offAllNamed(rootRoute);
+                  // Get.offAll(SiteLayout());
                 },
                 child: Container(
                   decoration: BoxDecoration(
