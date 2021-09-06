@@ -1,6 +1,6 @@
-# flutter_web_crash_course
+# Web-Admin
 
-A new Flutter application.
+Web Admin Page Implementation with GetX State Management
 
 ## Getting Started
 
