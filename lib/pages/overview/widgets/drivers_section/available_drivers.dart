@@ -6,8 +6,6 @@ import 'package:flutter_web_crash_course/widgets/custom_text.dart';
 
 /// Example without datasource
 class AvailableDrivers extends StatelessWidget {
-  const AvailableDrivers();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -86,7 +84,7 @@ class AvailableDrivers extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 6),
                             child: CustomText(
-                              text: "Available Delivery",
+                              text: "Assign Delivery",
                               color: active.withOpacity(.7),
                               weight: FontWeight.bold,
                             ),

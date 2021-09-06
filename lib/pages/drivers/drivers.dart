@@ -4,6 +4,8 @@ import 'package:flutter_web_crash_course/helpers/responsiveness.dart';
 import 'package:flutter_web_crash_course/widgets/custom_text.dart';
 import 'package:get/get.dart';
 
+import 'widgets/drivers_table.dart';
+
 class DriversPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,13 @@ class DriversPage extends StatelessWidget {
                   weight: FontWeight.bold,
                 ),
               ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: ListView(
+            children: [
+              DriversTable(),
             ],
           ),
         ),
