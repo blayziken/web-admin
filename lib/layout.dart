@@ -7,6 +7,7 @@ import 'package:flutter_web_crash_course/widgets/top_nav.dart';
 
 class SiteLayout extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  final GlobalKey<NavigatorState> navigationKe1y = GlobalKey();
 
   @override
   Widget build(BuildContext context) {

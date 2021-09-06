@@ -7,7 +7,7 @@ import 'custom_text.dart';
 
 class HorizontalMenuItem extends StatelessWidget {
   final String itemName;
-  final Function onTap;
+  final VoidCallback onTap; //VoidCallback is void Function()s
 
   const HorizontalMenuItem({
     Key? key,
@@ -19,7 +19,7 @@ class HorizontalMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     return InkWell(
-      onTap: () => onTap,
+      onTap: onTap,
       onHover: (value) {
         value
             ? menuController.onHover(itemName)

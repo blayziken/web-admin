@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_crash_course/controllers/navigation_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,6 +8,7 @@ import 'layout.dart';
 
 void main() {
   Get.put(MenuController());
+  Get.put(NavigationController());
   runApp(MyApp());
 }
 
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       home: SiteLayout(),
+      // getPages: [GetPage(name: '/jjk', page: () => JJKT())],
     );
   }
 }
